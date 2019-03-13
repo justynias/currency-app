@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="currency_app" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Blo-oM-I4D">
+                                <rect key="frame" x="100" y="490" width="175" height="30"/>
+                                <state key="normal" title="Convert"/>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" text="22 " textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="iKu-Mg-c8P">
+                                <rect key="frame" x="75" y="544" width="120" height="87"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="50"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" text="USD" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="6xC-9g-Sar">
+                                <rect key="frame" x="193" y="544" width="120" height="87"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="50"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6xC-9g-Sar" firstAttribute="leading" secondItem="iKu-Mg-c8P" secondAttribute="trailing" constant="-2" id="9s6-dy-dL6"/>
+                            <constraint firstItem="Blo-oM-I4D" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="100" id="BdH-dd-Wcn"/>
+                            <constraint firstItem="iKu-Mg-c8P" firstAttribute="top" secondItem="Blo-oM-I4D" secondAttribute="bottom" constant="24" id="IOl-Vt-0LN"/>
+                            <constraint firstItem="iKu-Mg-c8P" firstAttribute="top" secondItem="Blo-oM-I4D" secondAttribute="bottom" constant="24" id="LOp-IR-3m6"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="iKu-Mg-c8P" secondAttribute="bottom" constant="36" id="Otf-QW-sD0"/>
+                            <constraint firstItem="iKu-Mg-c8P" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="60" id="Uup-oV-HTK"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="6xC-9g-Sar" secondAttribute="bottom" constant="36" id="Z0O-eW-ab3"/>
+                            <constraint firstItem="6xC-9g-Sar" firstAttribute="leading" secondItem="iKu-Mg-c8P" secondAttribute="trailing" constant="-2" id="cwj-WE-LRl"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="6xC-9g-Sar" secondAttribute="trailing" constant="50" id="dpn-SM-hBN"/>
+                            <constraint firstItem="6xC-9g-Sar" firstAttribute="top" secondItem="Blo-oM-I4D" secondAttribute="bottom" constant="24" id="oXo-8M-OZC"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Blo-oM-I4D" secondAttribute="trailing" constant="100" id="sZH-fe-Fsf"/>
+                            <constraint firstItem="6xC-9g-Sar" firstAttribute="top" secondItem="Blo-oM-I4D" secondAttribute="bottom" constant="24" id="xma-v2-KwO"/>
+                            <constraint firstItem="6xC-9g-Sar" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="yKn-3M-Qzv"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="53.600000000000001" y="41.829085457271368"/>
+        </scene>
+    </scenes>
+</document>
