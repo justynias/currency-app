@@ -48,40 +48,68 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" restorationIdentifier="textFIeldDate" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hri-Oa-zgr">
-                                <rect key="frame" x="90" y="410" width="195" height="30"/>
+                                <rect key="frame" x="110" y="356" width="155" height="30"/>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Rjq-M3-rA0" customClass="DropDown" customModule="iOSDropDown">
-                                <rect key="frame" x="139" y="266" width="97" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" restorationIdentifier="dropDownCurrencyIn" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wRg-2r-aFi" customClass="DropDown" customModule="iOSDropDown">
+                                <rect key="frame" x="110" y="160" width="155" height="30"/>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="buttonChange" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j1E-7u-a0W">
+                                <rect key="frame" x="161" y="228" width="53" height="30"/>
+                                <state key="normal" title="Change"/>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" restorationIdentifier="textFieldValue" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gkU-xn-D5S">
+                                <rect key="frame" x="110" y="100" width="155" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" restorationIdentifier="dropDownCurrencyOut" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Rjq-M3-rA0" customClass="DropDown" customModule="iOSDropDown">
+                                <rect key="frame" x="110" y="296" width="155" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Hri-Oa-zgr" secondAttribute="trailing" constant="90" id="0IR-Ma-isM"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Hri-Oa-zgr" secondAttribute="trailing" constant="110" id="0IR-Ma-isM"/>
+                            <constraint firstItem="Rjq-M3-rA0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="110" id="11K-Mn-puN"/>
+                            <constraint firstItem="gkU-xn-D5S" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="110" id="2Ue-XW-rZi"/>
+                            <constraint firstItem="Rjq-M3-rA0" firstAttribute="top" secondItem="j1E-7u-a0W" secondAttribute="bottom" constant="38" id="3zx-G6-r0V"/>
                             <constraint firstItem="Blo-oM-I4D" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="100" id="BdH-dd-Wcn"/>
+                            <constraint firstItem="j1E-7u-a0W" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="161" id="GNS-bz-LZc"/>
                             <constraint firstItem="0Qo-91-l5i" firstAttribute="top" secondItem="Blo-oM-I4D" secondAttribute="bottom" constant="30" id="ISq-5m-71q"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Rjq-M3-rA0" secondAttribute="trailing" constant="110" id="Jnf-Hp-ZE0"/>
                             <constraint firstItem="Blo-oM-I4D" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="470" id="KST-E6-8vj"/>
-                            <constraint firstItem="Hri-Oa-zgr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="90" id="LdM-Vs-VJN"/>
-                            <constraint firstItem="Blo-oM-I4D" firstAttribute="top" secondItem="Hri-Oa-zgr" secondAttribute="bottom" constant="50" id="MPc-za-C7g"/>
+                            <constraint firstItem="gkU-xn-D5S" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="80" id="KrB-9K-Oz5"/>
+                            <constraint firstItem="Hri-Oa-zgr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="110" id="LdM-Vs-VJN"/>
+                            <constraint firstItem="wRg-2r-aFi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="110" id="Mtb-MZ-KsR"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="0Qo-91-l5i" secondAttribute="bottom" constant="35" id="PYy-6k-M5Z"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="cX3-Ba-Yv1" secondAttribute="bottom" constant="35" id="Pvn-7K-w29"/>
+                            <constraint firstItem="Hri-Oa-zgr" firstAttribute="top" secondItem="Rjq-M3-rA0" secondAttribute="bottom" constant="30" id="QBT-Wr-19A"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="j1E-7u-a0W" secondAttribute="trailing" constant="161" id="Ura-Jq-2D5"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gkU-xn-D5S" secondAttribute="trailing" constant="110" id="XAE-ga-YR4"/>
                             <constraint firstItem="0Qo-91-l5i" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="YE4-0O-K9n"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="wRg-2r-aFi" secondAttribute="trailing" constant="110" id="iU1-TR-VG8"/>
                             <constraint firstItem="cX3-Ba-Yv1" firstAttribute="top" secondItem="Blo-oM-I4D" secondAttribute="bottom" constant="30" id="jXK-Ne-jLD"/>
+                            <constraint firstItem="wRg-2r-aFi" firstAttribute="top" secondItem="gkU-xn-D5S" secondAttribute="bottom" constant="30" id="mpJ-sN-J4d"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cX3-Ba-Yv1" secondAttribute="trailing" constant="30" id="pgp-6V-fJn"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Blo-oM-I4D" secondAttribute="trailing" constant="100" id="sZH-fe-Fsf"/>
+                            <constraint firstItem="j1E-7u-a0W" firstAttribute="top" secondItem="wRg-2r-aFi" secondAttribute="bottom" constant="38" id="v5K-bh-vIG"/>
                             <constraint firstItem="cX3-Ba-Yv1" firstAttribute="leading" secondItem="0Qo-91-l5i" secondAttribute="trailing" id="vBH-mC-ahI"/>
                             <constraint firstItem="cX3-Ba-Yv1" firstAttribute="leading" secondItem="0Qo-91-l5i" secondAttribute="trailing" id="wzC-nE-NdZ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="currencyDropDown" destination="Rjq-M3-rA0" id="vJn-He-Hsl"/>
+                        <outlet property="currencyInDropDown" destination="Rjq-M3-rA0" id="vJn-He-Hsl"/>
+                        <outlet property="currencyOutDropDown" destination="wRg-2r-aFi" id="APL-TM-Q99"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

@@ -39,14 +39,17 @@ import iOSDropDown
 }
 class ViewController: UIViewController {
 
-   @IBOutlet weak var currencyDropDown: DropDown!
+   @IBOutlet weak var currencyInDropDown: DropDown!
 
+    @IBOutlet weak var currencyOutDropDown: DropDown!
     
     override func viewDidLoad() {
 
     
         super.viewDidLoad()
-                 currencyDropDown.optionArray = ["AAA", "ABA", "BBB", "CAB"]
+        currencyInDropDown.optionArray = ["AAA", "ABA", "BBB", "CAB"]
+        currencyOutDropDown.optionArray = ["AAA", "ABA", "BBB", "CAB"]
+
        
     }
 
