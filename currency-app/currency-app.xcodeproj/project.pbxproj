@@ -14,6 +14,10 @@
 		06B8EB98223919D80095DF83 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06B8EB96223919D80095DF83 /* LaunchScreen.storyboard */; };
 		06B8EBA3223919D80095DF83 /* currency_appTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B8EBA2223919D80095DF83 /* currency_appTests.swift */; };
 		06B8EBAE223919D80095DF83 /* currency_appUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B8EBAD223919D80095DF83 /* currency_appUITests.swift */; };
+		4A68B491223A95160034FF3F /* iOSDropDown.swift in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A68B490223A95160034FF3F /* iOSDropDown.swift */; };
+		4A68B493223A9C160034FF3F /* iOSDropDown.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A68B492223A9C160034FF3F /* iOSDropDown.framework */; };
+		9125AA8ABB57905D2B8917DB /* Pods_currency_appUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FAFC64FEB6492DAE5F1540A /* Pods_currency_appUITests.framework */; };
+		B1536F219DA09992773C08F7 /* Pods_currency_appTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5B5492E3B104AA2D50F41E6 /* Pods_currency_appTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +51,21 @@
 		06B8EBA9223919D80095DF83 /* currency-appUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "currency-appUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		06B8EBAD223919D80095DF83 /* currency_appUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = currency_appUITests.swift; sourceTree = "<group>"; };
 		06B8EBAF223919D80095DF83 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3526F1BAF366E950AF632E0B /* Pods-currency-appTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-currency-appTests.release.xcconfig"; path = "Target Support Files/Pods-currency-appTests/Pods-currency-appTests.release.xcconfig"; sourceTree = "<group>"; };
+		432B1B7D422DECAE2172F244 /* Pods-currency-appUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-currency-appUITests.debug.xcconfig"; path = "Target Support Files/Pods-currency-appUITests/Pods-currency-appUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		499AAF74B646226DE7B24F33 /* Pods-currency-appTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-currency-appTests.debug.xcconfig"; path = "Target Support Files/Pods-currency-appTests/Pods-currency-appTests.debug.xcconfig"; sourceTree = "<group>"; };
+		4A68B488223A91CB0034FF3F /* currency-app */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "currency-app"; sourceTree = "<group>"; };
+		4A68B48A223A92230034FF3F /* Pods */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Pods; sourceTree = "<group>"; };
+		4A68B48C223A93490034FF3F /* InterfaceBuilderKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = InterfaceBuilderKit.framework; path = Library/Frameworks/InterfaceBuilderKit.framework; sourceTree = DEVELOPER_DIR; };
+		4A68B48E223A94A50034FF3F /* iOSDropDown */ = {isa = PBXFileReference; lastKnownFileType = folder; name = iOSDropDown; path = Pods/iOSDropDown; sourceTree = "<group>"; };
+		4A68B490223A95160034FF3F /* iOSDropDown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = iOSDropDown.swift; path = Pods/iOSDropDown/iOSDropDown/Classes/iOSDropDown.swift; sourceTree = "<group>"; };
+		4A68B492223A9C160034FF3F /* iOSDropDown.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = iOSDropDown.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4FAFC64FEB6492DAE5F1540A /* Pods_currency_appUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_currency_appUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		717AD64D41BB244524B585C1 /* Pods_currency_app.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_currency_app.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		745931DAC19E67B3D1052F5B /* Pods-currency-app.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-currency-app.release.xcconfig"; path = "Target Support Files/Pods-currency-app/Pods-currency-app.release.xcconfig"; sourceTree = "<group>"; };
+		944400D93D6D275848C73E3A /* Pods-currency-appUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-currency-appUITests.release.xcconfig"; path = "Target Support Files/Pods-currency-appUITests/Pods-currency-appUITests.release.xcconfig"; sourceTree = "<group>"; };
+		B5B5492E3B104AA2D50F41E6 /* Pods_currency_appTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_currency_appTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D1309BF639E20B3C696D6DC9 /* Pods-currency-app.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-currency-app.debug.xcconfig"; path = "Target Support Files/Pods-currency-app/Pods-currency-app.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +73,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A68B493223A9C160034FF3F /* iOSDropDown.framework in Frameworks */,
+				4A68B491223A95160034FF3F /* iOSDropDown.swift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B1536F219DA09992773C08F7 /* Pods_currency_appTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,6 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9125AA8ABB57905D2B8917DB /* Pods_currency_appUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +104,8 @@
 				06B8EBA1223919D80095DF83 /* currency-appTests */,
 				06B8EBAC223919D80095DF83 /* currency-appUITests */,
 				06B8EB8B223919D60095DF83 /* Products */,
+				1F6B53F61342927A6AEB01C2 /* Pods */,
+				F1B9596F5BDDBD053EF3B0B3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -125,6 +150,35 @@
 			path = "currency-appUITests";
 			sourceTree = "<group>";
 		};
+		1F6B53F61342927A6AEB01C2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D1309BF639E20B3C696D6DC9 /* Pods-currency-app.debug.xcconfig */,
+				745931DAC19E67B3D1052F5B /* Pods-currency-app.release.xcconfig */,
+				499AAF74B646226DE7B24F33 /* Pods-currency-appTests.debug.xcconfig */,
+				3526F1BAF366E950AF632E0B /* Pods-currency-appTests.release.xcconfig */,
+				432B1B7D422DECAE2172F244 /* Pods-currency-appUITests.debug.xcconfig */,
+				944400D93D6D275848C73E3A /* Pods-currency-appUITests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		F1B9596F5BDDBD053EF3B0B3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4A68B492223A9C160034FF3F /* iOSDropDown.framework */,
+				4A68B490223A95160034FF3F /* iOSDropDown.swift */,
+				4A68B48E223A94A50034FF3F /* iOSDropDown */,
+				4A68B48C223A93490034FF3F /* InterfaceBuilderKit.framework */,
+				4A68B48A223A92230034FF3F /* Pods */,
+				4A68B488223A91CB0034FF3F /* currency-app */,
+				717AD64D41BB244524B585C1 /* Pods_currency_app.framework */,
+				B5B5492E3B104AA2D50F41E6 /* Pods_currency_appTests.framework */,
+				4FAFC64FEB6492DAE5F1540A /* Pods_currency_appUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +186,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 06B8EBB2223919D80095DF83 /* Build configuration list for PBXNativeTarget "currency-app" */;
 			buildPhases = (
+				9E77FA2AB9A1C1563DE9293A /* [CP] Check Pods Manifest.lock */,
 				06B8EB86223919D60095DF83 /* Sources */,
 				06B8EB87223919D60095DF83 /* Frameworks */,
 				06B8EB88223919D60095DF83 /* Resources */,
+				7F4794DA4B5BF86C91A4F97D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -149,6 +205,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 06B8EBB5223919D80095DF83 /* Build configuration list for PBXNativeTarget "currency-appTests" */;
 			buildPhases = (
+				8BE7349995F18CF10A3B8F34 /* [CP] Check Pods Manifest.lock */,
 				06B8EB9A223919D80095DF83 /* Sources */,
 				06B8EB9B223919D80095DF83 /* Frameworks */,
 				06B8EB9C223919D80095DF83 /* Resources */,
@@ -167,6 +224,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 06B8EBB8223919D80095DF83 /* Build configuration list for PBXNativeTarget "currency-appUITests" */;
 			buildPhases = (
+				4771592B1FD9FE7A07C5B3A9 /* [CP] Check Pods Manifest.lock */,
 				06B8EBA5223919D80095DF83 /* Sources */,
 				06B8EBA6223919D80095DF83 /* Frameworks */,
 				06B8EBA7223919D80095DF83 /* Resources */,
@@ -250,6 +308,97 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4771592B1FD9FE7A07C5B3A9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-currency-appUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7F4794DA4B5BF86C91A4F97D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-currency-app/Pods-currency-app-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/iOSDropDown/iOSDropDown.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/iOSDropDown.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-currency-app/Pods-currency-app-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8BE7349995F18CF10A3B8F34 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-currency-appTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9E77FA2AB9A1C1563DE9293A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-currency-app-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		06B8EB86223919D60095DF83 /* Sources */ = {
@@ -430,6 +579,7 @@
 		};
 		06B8EBB3223919D80095DF83 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D1309BF639E20B3C696D6DC9 /* Pods-currency-app.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -448,6 +598,7 @@
 		};
 		06B8EBB4223919D80095DF83 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 745931DAC19E67B3D1052F5B /* Pods-currency-app.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -466,6 +617,7 @@
 		};
 		06B8EBB6223919D80095DF83 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 499AAF74B646226DE7B24F33 /* Pods-currency-appTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -487,6 +639,7 @@
 		};
 		06B8EBB7223919D80095DF83 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3526F1BAF366E950AF632E0B /* Pods-currency-appTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -508,6 +661,7 @@
 		};
 		06B8EBB9223919D80095DF83 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 432B1B7D422DECAE2172F244 /* Pods-currency-appUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -528,6 +682,7 @@
 		};
 		06B8EBBA223919D80095DF83 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 944400D93D6D275848C73E3A /* Pods-currency-appUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
