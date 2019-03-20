@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="buttonConvert" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Blo-oM-I4D">
-                                <rect key="frame" x="100" y="479" width="175" height="36"/>
+                                <rect key="frame" x="100" y="450" width="175" height="36"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                                 <state key="normal" title="Convert">
                                     <color key="titleColor" red="0.52549019610000003" green="0.2666666667" blue="0.70196078429999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -35,18 +35,6 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="labelConvertedCurrency" text="USD" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cX3-Ba-Yv1">
-                                <rect key="frame" x="234.5" y="545" width="110.5" height="72"/>
-                                <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="60"/>
-                                <color key="textColor" red="0.52549019610000003" green="0.2666666667" blue="0.70196078429999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" restorationIdentifier="labelConvertedValue" text="22" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Qo-91-l5i">
-                                <rect key="frame" x="30" y="545" width="204.5" height="72"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="60"/>
-                                <color key="textColor" red="0.52549019610000003" green="0.2666666667" blue="0.70196078429999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <textField opaque="NO" contentMode="scaleToFill" restorationIdentifier="textFIeldDate" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="15/03/2019" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hri-Oa-zgr">
                                 <rect key="frame" x="110" y="300" width="155" height="30"/>
                                 <color key="textColor" red="0.52549019610000003" green="0.2666666667" blue="0.70196078429999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -67,12 +55,8 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="buttonChange" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j1E-7u-a0W">
-                                <rect key="frame" x="270" y="180" width="35" height="54"/>
-                                <state key="normal" image="ButtonIcon">
-                                    <string key="backgroundImage" base64-UTF8="YES">
-CA
-</string>
-                                </state>
+                                <rect key="frame" x="270" y="190" width="45" height="54"/>
+                                <state key="normal" image="ButtonIcon"/>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" restorationIdentifier="textFieldValue" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="value" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gkU-xn-D5S">
                                 <rect key="frame" x="110" y="120" width="155" height="30"/>
@@ -82,41 +66,41 @@ CA
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CalendarIcon" translatesAutoresizingMaskIntoConstraints="NO" id="ufw-Oa-PMD">
-                                <rect key="frame" x="52" y="300" width="50" height="30"/>
+                                <rect key="frame" x="52" y="300" width="50" height="25"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" restorationIdentifier="labelConvertedValue" text="22 USD" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Qo-91-l5i">
+                                <rect key="frame" x="30" y="521" width="315" height="72"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="60"/>
+                                <color key="textColor" red="0.52549019610000003" green="0.2666666667" blue="0.70196078429999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Hri-Oa-zgr" secondAttribute="trailing" constant="110" id="0IR-Ma-isM"/>
                             <constraint firstItem="Rjq-M3-rA0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="110" id="11K-Mn-puN"/>
                             <constraint firstItem="gkU-xn-D5S" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="110" id="2Ue-XW-rZi"/>
-                            <constraint firstItem="0Qo-91-l5i" firstAttribute="top" secondItem="ufw-Oa-PMD" secondAttribute="bottom" constant="215" id="4BY-lM-phe"/>
-                            <constraint firstItem="j1E-7u-a0W" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="160" id="8dJ-x5-1yh"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="0Qo-91-l5i" secondAttribute="bottom" constant="74" id="7y1-Cw-0fR"/>
+                            <constraint firstItem="j1E-7u-a0W" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="170" id="8dJ-x5-1yh"/>
                             <constraint firstItem="Blo-oM-I4D" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="100" id="BdH-dd-Wcn"/>
-                            <constraint firstItem="Blo-oM-I4D" firstAttribute="top" secondItem="j1E-7u-a0W" secondAttribute="bottom" constant="245" id="Ea4-F3-sxj"/>
-                            <constraint firstItem="j1E-7u-a0W" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="270" id="GNS-bz-LZc"/>
-                            <constraint firstItem="0Qo-91-l5i" firstAttribute="top" secondItem="Blo-oM-I4D" secondAttribute="bottom" constant="30" id="ISq-5m-71q"/>
+                            <constraint firstItem="j1E-7u-a0W" firstAttribute="leading" secondItem="Rjq-M3-rA0" secondAttribute="trailing" constant="5" id="IpZ-tS-Nmk"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Rjq-M3-rA0" secondAttribute="trailing" constant="110" id="Jnf-Hp-ZE0"/>
                             <constraint firstItem="gkU-xn-D5S" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="KrB-9K-Oz5"/>
                             <constraint firstItem="Hri-Oa-zgr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="110" id="LdM-Vs-VJN"/>
                             <constraint firstItem="wRg-2r-aFi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="110" id="Mtb-MZ-KsR"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="0Qo-91-l5i" secondAttribute="bottom" constant="50" id="PYy-6k-M5Z"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="cX3-Ba-Yv1" secondAttribute="bottom" constant="50" id="Pvn-7K-w29"/>
                             <constraint firstItem="Hri-Oa-zgr" firstAttribute="top" secondItem="Rjq-M3-rA0" secondAttribute="bottom" constant="30" id="QBT-Wr-19A"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="j1E-7u-a0W" secondAttribute="trailing" constant="70" id="Ura-Jq-2D5"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="j1E-7u-a0W" secondAttribute="trailing" constant="60" id="Ura-Jq-2D5"/>
                             <constraint firstItem="ufw-Oa-PMD" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="280" id="Vvf-rs-Vpk"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gkU-xn-D5S" secondAttribute="trailing" constant="110" id="XAE-ga-YR4"/>
-                            <constraint firstItem="0Qo-91-l5i" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="YE4-0O-K9n"/>
+                            <constraint firstItem="0Qo-91-l5i" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="ZwN-oc-4Ii"/>
                             <constraint firstItem="ufw-Oa-PMD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="52" id="abH-WQ-o59"/>
                             <constraint firstItem="Rjq-M3-rA0" firstAttribute="top" secondItem="wRg-2r-aFi" secondAttribute="bottom" constant="30" id="djH-nh-1lp"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="wRg-2r-aFi" secondAttribute="trailing" constant="110" id="iU1-TR-VG8"/>
-                            <constraint firstItem="cX3-Ba-Yv1" firstAttribute="top" secondItem="Blo-oM-I4D" secondAttribute="bottom" constant="30" id="jXK-Ne-jLD"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="0Qo-91-l5i" secondAttribute="trailing" constant="30" id="mBI-j1-SMb"/>
                             <constraint firstItem="wRg-2r-aFi" firstAttribute="top" secondItem="gkU-xn-D5S" secondAttribute="bottom" constant="30" id="mpJ-sN-J4d"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cX3-Ba-Yv1" secondAttribute="trailing" constant="30" id="pgp-6V-fJn"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Blo-oM-I4D" secondAttribute="trailing" constant="100" id="sZH-fe-Fsf"/>
-                            <constraint firstItem="cX3-Ba-Yv1" firstAttribute="leading" secondItem="0Qo-91-l5i" secondAttribute="trailing" id="vBH-mC-ahI"/>
-                            <constraint firstItem="cX3-Ba-Yv1" firstAttribute="leading" secondItem="0Qo-91-l5i" secondAttribute="trailing" id="wzC-nE-NdZ"/>
                             <constraint firstItem="Hri-Oa-zgr" firstAttribute="leading" secondItem="ufw-Oa-PMD" secondAttribute="trailing" constant="8" id="xhI-o5-fUa"/>
+                            <constraint firstItem="0Qo-91-l5i" firstAttribute="top" secondItem="Blo-oM-I4D" secondAttribute="bottom" constant="35" id="zXC-Dc-zC8"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -131,11 +115,6 @@ CA
         </scene>
     </scenes>
     <resources>
-        <image width="16" height="16">
-            <string key="name" base64-UTF8="YES">
-CA
-</string>
-        </image>
         <image name="ButtonIcon" width="35" height="54"/>
         <image name="CalendarIcon" width="25" height="25"/>
     </resources>
