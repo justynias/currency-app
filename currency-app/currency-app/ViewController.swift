@@ -44,6 +44,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var currencyOutDropDown: DropDown!
     
     
+    
     override func viewDidLoad() {
 
     
@@ -57,11 +58,21 @@ class ViewController: UIViewController {
             keys=NSDictionary(contentsOfFile: path)
         }
         let arrayOfKeys = keys?.allValues as! [String]
-        fetchDataFromApi(apiKey: arrayOfKeys[0])
+        if let path = Bundle.main.path(forResource: "Keys", ofType: "plist") {
+            keys = NSDictionary(contentsOfFile: path)
+        }
+        
+        DispatchQueue.global(qos: .background).async {
+            let JSON = self.fetchDataFromApi(apiKey: arrayOfKeys[0])
+            DispatchQueue.main.async {
+                print(JSON)
+            }
+        }
+        
        
     }
     
-    func fetchDataFromApi(apiKey: String){
+    func fetchDataFromApi(apiKey: String) -> String {
         let api = "http://www.apilayer.net/api/historical?access_key="
         let endpoint = "&date=2019-03-03&currencies=USD,PLN&format=1"
         let url = URL(string: api + apiKey + endpoint)!
@@ -89,10 +100,8 @@ class ViewController: UIViewController {
                 return
             }
             
-            print("gotten json response dictionary is \n \(json)")
             // update UI using the response here
         }
-        
         // execute the HTTP request
         task.resume()
 
