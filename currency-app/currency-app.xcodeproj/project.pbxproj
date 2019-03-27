@@ -14,6 +14,7 @@
 		06B8EB98223919D80095DF83 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06B8EB96223919D80095DF83 /* LaunchScreen.storyboard */; };
 		06B8EBA3223919D80095DF83 /* currency_appTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B8EBA2223919D80095DF83 /* currency_appTests.swift */; };
 		06B8EBAE223919D80095DF83 /* currency_appUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B8EBAD223919D80095DF83 /* currency_appUITests.swift */; };
+		06F6A2EB224B9A02006D390D /* keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 06F6A2EA224B9A02006D390D /* keys.plist */; };
 		4A68B491223A95160034FF3F /* iOSDropDown.swift in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A68B490223A95160034FF3F /* iOSDropDown.swift */; };
 		4A68B493223A9C160034FF3F /* iOSDropDown.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A68B492223A9C160034FF3F /* iOSDropDown.framework */; };
 		9125AA8ABB57905D2B8917DB /* Pods_currency_appUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FAFC64FEB6492DAE5F1540A /* Pods_currency_appUITests.framework */; };
@@ -51,6 +52,7 @@
 		06B8EBA9223919D80095DF83 /* currency-appUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "currency-appUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		06B8EBAD223919D80095DF83 /* currency_appUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = currency_appUITests.swift; sourceTree = "<group>"; };
 		06B8EBAF223919D80095DF83 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		06F6A2EA224B9A02006D390D /* keys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = keys.plist; sourceTree = "<group>"; };
 		3526F1BAF366E950AF632E0B /* Pods-currency-appTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-currency-appTests.release.xcconfig"; path = "Target Support Files/Pods-currency-appTests/Pods-currency-appTests.release.xcconfig"; sourceTree = "<group>"; };
 		432B1B7D422DECAE2172F244 /* Pods-currency-appUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-currency-appUITests.debug.xcconfig"; path = "Target Support Files/Pods-currency-appUITests/Pods-currency-appUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		499AAF74B646226DE7B24F33 /* Pods-currency-appTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-currency-appTests.debug.xcconfig"; path = "Target Support Files/Pods-currency-appTests/Pods-currency-appTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 				06B8EB94223919D80095DF83 /* Assets.xcassets */,
 				06B8EB96223919D80095DF83 /* LaunchScreen.storyboard */,
 				06B8EB99223919D80095DF83 /* Info.plist */,
+				06F6A2EA224B9A02006D390D /* keys.plist */,
 			);
 			path = "currency-app";
 			sourceTree = "<group>";
@@ -287,6 +290,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				06F6A2EB224B9A02006D390D /* keys.plist in Resources */,
 				06B8EB98223919D80095DF83 /* LaunchScreen.storyboard in Resources */,
 				06B8EB95223919D80095DF83 /* Assets.xcassets in Resources */,
 				06B8EB93223919D70095DF83 /* Main.storyboard in Resources */,
