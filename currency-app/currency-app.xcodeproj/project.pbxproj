@@ -19,6 +19,7 @@
 		4A68B493223A9C160034FF3F /* iOSDropDown.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A68B492223A9C160034FF3F /* iOSDropDown.framework */; };
 		9125AA8ABB57905D2B8917DB /* Pods_currency_appUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FAFC64FEB6492DAE5F1540A /* Pods_currency_appUITests.framework */; };
 		B1536F219DA09992773C08F7 /* Pods_currency_appTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5B5492E3B104AA2D50F41E6 /* Pods_currency_appTests.framework */; };
+		B2F282912254D0A60097BC43 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F282902254D0A60097BC43 /* Currency.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,7 @@
 		717AD64D41BB244524B585C1 /* Pods_currency_app.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_currency_app.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		745931DAC19E67B3D1052F5B /* Pods-currency-app.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-currency-app.release.xcconfig"; path = "Target Support Files/Pods-currency-app/Pods-currency-app.release.xcconfig"; sourceTree = "<group>"; };
 		944400D93D6D275848C73E3A /* Pods-currency-appUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-currency-appUITests.release.xcconfig"; path = "Target Support Files/Pods-currency-appUITests/Pods-currency-appUITests.release.xcconfig"; sourceTree = "<group>"; };
+		B2F282902254D0A60097BC43 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		B5B5492E3B104AA2D50F41E6 /* Pods_currency_appTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_currency_appTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1309BF639E20B3C696D6DC9 /* Pods-currency-app.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-currency-app.debug.xcconfig"; path = "Target Support Files/Pods-currency-app/Pods-currency-app.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -131,6 +133,7 @@
 				06B8EB96223919D80095DF83 /* LaunchScreen.storyboard */,
 				06B8EB99223919D80095DF83 /* Info.plist */,
 				06F6A2EA224B9A02006D390D /* keys.plist */,
+				B2F282902254D0A60097BC43 /* Currency.swift */,
 			);
 			path = "currency-app";
 			sourceTree = "<group>";
@@ -409,6 +412,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2F282912254D0A60097BC43 /* Currency.swift in Sources */,
 				06B8EB90223919D60095DF83 /* ViewController.swift in Sources */,
 				06B8EB8E223919D60095DF83 /* AppDelegate.swift in Sources */,
 			);

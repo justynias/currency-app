@@ -39,48 +39,35 @@ import iOSDropDown
 }
 class ViewController: UIViewController {
 
-   @IBOutlet weak var currencyInDropDown: DropDown!
+    @IBOutlet weak var currencyInDropDown: DropDown!
 
     @IBOutlet weak var currencyOutDropDown: DropDown!
     
-    
-    
-    override func viewDidLoad() {
-
-    
-        super.viewDidLoad()
-        currencyInDropDown.optionArray = ["AAA", "ABA", "BBB", "CAB"]
-        currencyOutDropDown.optionArray = ["AAA", "ABA", "BBB", "CAB"]
-        
+    func getApiKey() -> String {
         var keys:NSDictionary?
-        
         if let path =  Bundle.main.path(forResource: "keys", ofType: "plist"){
             keys=NSDictionary(contentsOfFile: path)
         }
         let arrayOfKeys = keys?.allValues as! [String]
-        if let path = Bundle.main.path(forResource: "Keys", ofType: "plist") {
-            keys = NSDictionary(contentsOfFile: path)
-        }
-        
-        DispatchQueue.global(qos: .background).async {
-            let JSON = self.fetchDataFromApi(apiKey: arrayOfKeys[0])
-            DispatchQueue.main.async {
-                print(JSON)
-            }
-        }
-        
-       
+
+        return arrayOfKeys[0]
     }
-    
-    func fetchDataFromApi(apiKey: String) -> String {
-        let api = "http://www.apilayer.net/api/historical?access_key="
-        let endpoint = "&date=2019-03-03&currencies=USD,PLN&format=1"
-        let url = URL(string: api + apiKey + endpoint)!
+    func prepareURLToFetch(param: String, apiKey: String, date: String="", inCurrenncy: String="", outCurrency: String="") -> String {
+        let api = "http://www.apilayer.net/api/\(param)"
+        let accessKey = "?access_key=\(apiKey)"
+        if(param == "list"){
+            return api + accessKey
+        }
+        let endpoint = "&date=\(date)&currencies=\(inCurrenncy),\(outCurrency)&format=1"
+        return api + accessKey + endpoint
         
+    }
+    func fetchDataFromApi(url: String, completionHandler:@escaping (_ result: [String: Any]) -> Void){
         let config = URLSessionConfiguration.default
         let session = URLSession(configuration: config)
+        let mainURL = URL(string: url)
         
-        let task = session.dataTask(with: url) { data, response, error in
+        let task = session.dataTask(with: mainURL!) { data, response, error in
             
             // ensure there is no error for this HTTP response
             guard error == nil else {
@@ -99,13 +86,40 @@ class ViewController: UIViewController {
                 print("Not containing JSON")
                 return
             }
+            completionHandler(json)
             
-            // update UI using the response here
         }
         // execute the HTTP request
         task.resume()
-
+        
     }
+    func populateDropdowns(){
+        let key = getApiKey()
+        let url = prepareURLToFetch(param: "list", apiKey: key)
+        self.fetchDataFromApi(url: url) {
+            result in
+                let currencies = try JSONDecoder().decode([String:Currency].self, from: result["currencies"])
+                for(key, value) in currencies{
+                    print(key)
+                }
+                
+            
+        }
+    
+    }
+    
+    
+    override func viewDidLoad() {
+
+        super.viewDidLoad()
+        
+        DispatchQueue.global(qos: .background).async {
+            self.populateDropdowns()
+           
+        }
+    }
+    
+   
 
 
 
