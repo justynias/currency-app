@@ -94,29 +94,29 @@ class ViewController: UIViewController {
         
     }
     func fetchCurrenciesList(){
-        let key = getApiKey()
-        let url = prepareURLToFetch(param: "list", apiKey: key)
+        var newArray : Array<Currency> = Array()
+        let key = self.getApiKey()
+        let url = self.prepareURLToFetch(param: "list", apiKey: key)
         self.fetchDataFromApi(url: url) {
+            // Callback for data fetched
             result in
             let currencies = result["currencies"]
             for(key, value) in currencies {
-                self.currenciesArray.append(Currency(shortName: key, fullName: value.stringValue))
+                newArray.append(Currency(shortName: key, fullName: value.stringValue))
             }
+            // Populate dropdowns after data has been fetched with Array mapped only to its shortName
+            self.populateDropdowns(currencies: newArray.map( { $0.shortName } ))
+            
         }
     }
-    func populateDropdowns(){
-        DispatchQueue.global(qos: .background).async {
-            self.fetchCurrenciesList()
-            print(self.currenciesArray)
-        }
-        
-        let shortNames = currenciesArray.map({ $0.shortName })
-        currencyInDropDown.optionArray = shortNames
-        currencyOutDropDown.optionArray = shortNames
+    func populateDropdowns(currencies : Array<String>){
+        self.currencyInDropDown.optionArray = currencies
+        self.currencyOutDropDown.optionArray = currencies
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.populateDropdowns()
+        self.fetchCurrenciesList()
+        
       
     }
 }
