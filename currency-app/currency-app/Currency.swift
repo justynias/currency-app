@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Currency {
+struct Currency : Decodable{
     let shortName : String
     let country : String
 }

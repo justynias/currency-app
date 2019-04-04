@@ -82,11 +82,11 @@ class ViewController: UIViewController {
             }
             
             // serialise the data / NSData object into Dictionary [String : Any]
-            guard let json = (try? JSONSerialization.jsonObject(with: content, options: JSONSerialization.ReadingOptions.mutableContainers)) as? [String: Any] else {
+            guard let jsonObj = (try? JSONSerialization.jsonObject(with: content, options: JSONSerialization.ReadingOptions.mutableContainers)) as? [String: Any] else {
                 print("Not containing JSON")
                 return
             }
-            completionHandler(json)
+            completionHandler(jsonObj)
             
         }
         // execute the HTTP request
@@ -98,11 +98,14 @@ class ViewController: UIViewController {
         let url = prepareURLToFetch(param: "list", apiKey: key)
         self.fetchDataFromApi(url: url) {
             result in
-                let currencies = try JSONDecoder().decode([String:Currency].self, from: result["currencies"])
-                for(key, value) in currencies{
+            if let result = json.obj {
+                for (key,value) in result {ś
                     print(key)
                 }
+            }
                 
+            
+            
             
         }
     
