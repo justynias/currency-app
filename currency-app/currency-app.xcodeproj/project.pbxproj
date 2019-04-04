@@ -20,6 +20,7 @@
 		4E0E4254C5ABA0CF7FFFEF8E /* Pods_currency_app.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 717AD64D41BB244524B585C1 /* Pods_currency_app.framework */; };
 		9125AA8ABB57905D2B8917DB /* Pods_currency_appUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FAFC64FEB6492DAE5F1540A /* Pods_currency_appUITests.framework */; };
 		B1536F219DA09992773C08F7 /* Pods_currency_appTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5B5492E3B104AA2D50F41E6 /* Pods_currency_appTests.framework */; };
+		B25725D7225635A70048D5E3 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B25725D6225635A70048D5E3 /* SwiftyJSON.framework */; };
 		B2F282912254D0A60097BC43 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F282902254D0A60097BC43 /* Currency.swift */; };
 /* End PBXBuildFile section */
 
@@ -68,6 +69,7 @@
 		717AD64D41BB244524B585C1 /* Pods_currency_app.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_currency_app.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		745931DAC19E67B3D1052F5B /* Pods-currency-app.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-currency-app.release.xcconfig"; path = "Target Support Files/Pods-currency-app/Pods-currency-app.release.xcconfig"; sourceTree = "<group>"; };
 		944400D93D6D275848C73E3A /* Pods-currency-appUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-currency-appUITests.release.xcconfig"; path = "Target Support Files/Pods-currency-appUITests/Pods-currency-appUITests.release.xcconfig"; sourceTree = "<group>"; };
+		B25725D6225635A70048D5E3 /* SwiftyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2F282902254D0A60097BC43 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		B5B5492E3B104AA2D50F41E6 /* Pods_currency_appTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_currency_appTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1309BF639E20B3C696D6DC9 /* Pods-currency-app.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-currency-app.debug.xcconfig"; path = "Target Support Files/Pods-currency-app/Pods-currency-app.debug.xcconfig"; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B25725D7225635A70048D5E3 /* SwiftyJSON.framework in Frameworks */,
 				4A68B493223A9C160034FF3F /* iOSDropDown.framework in Frameworks */,
 				4A68B491223A95160034FF3F /* iOSDropDown.swift in Frameworks */,
 				4E0E4254C5ABA0CF7FFFEF8E /* Pods_currency_app.framework in Frameworks */,
@@ -174,6 +177,7 @@
 		F1B9596F5BDDBD053EF3B0B3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B25725D6225635A70048D5E3 /* SwiftyJSON.framework */,
 				4A68B492223A9C160034FF3F /* iOSDropDown.framework */,
 				4A68B490223A95160034FF3F /* iOSDropDown.swift */,
 				4A68B48E223A94A50034FF3F /* iOSDropDown */,

@@ -8,6 +8,7 @@
 
 import UIKit
 import iOSDropDown
+import SwiftyJSON
 
 @IBDesignable extension UIButton{
     @IBInspectable var borderColor: UIColor?{
@@ -43,6 +44,8 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var currencyOutDropDown: DropDown!
     
+    var currenciesArray : Array<Currency> = Array()
+    
     func getApiKey() -> String {
         var keys:NSDictionary?
         if let path =  Bundle.main.path(forResource: "keys", ofType: "plist"){
@@ -62,7 +65,7 @@ class ViewController: UIViewController {
         return api + accessKey + endpoint
         
     }
-    func fetchDataFromApi(url: String, completionHandler:@escaping (_ result: [String: Any]) -> Void){
+    func fetchDataFromApi(url: String, completionHandler:@escaping (_ result: JSON) -> Void){
         let config = URLSessionConfiguration.default
         let session = URLSession(configuration: config)
         let mainURL = URL(string: url)
@@ -81,11 +84,8 @@ class ViewController: UIViewController {
                 return
             }
             
-            // serialise the data / NSData object into Dictionary [String : Any]
-            guard let jsonObj = (try? JSONSerialization.jsonObject(with: content, options: JSONSerialization.ReadingOptions.mutableContainers)) as? [String: Any] else {
-                print("Not containing JSON")
-                return
-            }
+            // serialise the data / NSData object into JSON OBJECT
+            let jsonObj = JSON(content)
             completionHandler(jsonObj)
             
         }
@@ -93,38 +93,37 @@ class ViewController: UIViewController {
         task.resume()
         
     }
-    func populateDropdowns(){
+    func fetchCurrenciesList(){
         let key = getApiKey()
         let url = prepareURLToFetch(param: "list", apiKey: key)
         self.fetchDataFromApi(url: url) {
             result in
-            if let result = json.obj {
-                for (key,value) in result {ś
-                    print(key)
-                }
+            let currencies = result["currencies"]
+            for(key, value) in currencies {
+                self.currenciesArray.append(Currency(shortName: key, fullName: value.stringValue))
             }
-                
-            
-            
-            
         }
-    
     }
-    
-    
-    override func viewDidLoad() {
-
-        super.viewDidLoad()
-        
+    func populateDropdowns(){
         DispatchQueue.global(qos: .background).async {
-            self.populateDropdowns()
-           
+            self.fetchCurrenciesList()
+            print(self.currenciesArray)
         }
+        
+        let shortNames = currenciesArray.map({ $0.shortName })
+        currencyInDropDown.optionArray = shortNames
+        currencyOutDropDown.optionArray = shortNames
     }
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.populateDropdowns()
+      
+    }
+}
+    
+    
+
     
    
 
-
-
-}
 

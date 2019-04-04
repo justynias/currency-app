@@ -8,7 +8,11 @@
 
 import Foundation
 
-struct Currency : Decodable{
+struct Currency : Decodable {
     let shortName : String
-    let country : String
+    let fullName: String
+    init(shortName: String, fullName: String) {
+        self.shortName = shortName
+        self.fullName = fullName
+    }
 }
