@@ -6,7 +6,8 @@ target 'currency-app' do
   use_frameworks!
 
   # Pods for currency-app
-     pod 'iOSDropDown'	
+     pod 'iOSDropDown'
+     pod 'SwiftyJSON', '~> 4.0'	
 
   target 'currency-appTests' do
     inherit! :search_paths

@@ -17,6 +17,7 @@
 		06F6A2EB224B9A02006D390D /* keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 06F6A2EA224B9A02006D390D /* keys.plist */; };
 		4A68B491223A95160034FF3F /* iOSDropDown.swift in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A68B490223A95160034FF3F /* iOSDropDown.swift */; };
 		4A68B493223A9C160034FF3F /* iOSDropDown.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A68B492223A9C160034FF3F /* iOSDropDown.framework */; };
+		4E0E4254C5ABA0CF7FFFEF8E /* Pods_currency_app.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 717AD64D41BB244524B585C1 /* Pods_currency_app.framework */; };
 		9125AA8ABB57905D2B8917DB /* Pods_currency_appUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FAFC64FEB6492DAE5F1540A /* Pods_currency_appUITests.framework */; };
 		B1536F219DA09992773C08F7 /* Pods_currency_appTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5B5492E3B104AA2D50F41E6 /* Pods_currency_appTests.framework */; };
 		B2F282912254D0A60097BC43 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F282902254D0A60097BC43 /* Currency.swift */; };
@@ -79,6 +80,7 @@
 			files = (
 				4A68B493223A9C160034FF3F /* iOSDropDown.framework in Frameworks */,
 				4A68B491223A95160034FF3F /* iOSDropDown.swift in Frameworks */,
+				4E0E4254C5ABA0CF7FFFEF8E /* Pods_currency_app.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -348,12 +350,14 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-currency-app/Pods-currency-app-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/iOSDropDown/iOSDropDown.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/iOSDropDown.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;

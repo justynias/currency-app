@@ -1,16 +1,20 @@
 PODS:
   - iOSDropDown (0.2.7)
+  - SwiftyJSON (4.3.0)
 
 DEPENDENCIES:
   - iOSDropDown
+  - SwiftyJSON (~> 4.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - iOSDropDown
+    - SwiftyJSON
 
 SPEC CHECKSUMS:
   iOSDropDown: 7a4cfc67d5166f319858747b63cd2f7760c4fb4b
+  SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
 
-PODFILE CHECKSUM: 212191f37d17dbe230026e92340921e3aee46448
+PODFILE CHECKSUM: 2a26d2206e83f6c9c1bf282dd7287d79a6a596c5
 
 COCOAPODS: 1.6.1
