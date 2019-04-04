@@ -44,8 +44,6 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var currencyOutDropDown: DropDown!
     
-    var currenciesArray : Array<Currency> = Array()
-    
     func getApiKey() -> String {
         var keys:NSDictionary?
         if let path =  Bundle.main.path(forResource: "keys", ofType: "plist"){
