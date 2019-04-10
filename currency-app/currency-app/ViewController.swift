@@ -46,6 +46,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var convertButton : UIButton!
     
+    
     func getApiKey() -> String {
         var keys:NSDictionary?
         if let path =  Bundle.main.path(forResource: "keys", ofType: "plist"){
@@ -109,23 +110,37 @@ class ViewController: UIViewController {
             
         }
     }
-    func fetchToConvert(){
+    func convertCurrencies(){
+        
         let key = self.getApiKey()
         let currencies = ["PLN", "EUR"]
         let date = Date()
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd"
         let result = formatter.string(from: date)
+        
         let url = self.prepareURLToFetch(param: "historical", apiKey: key, date: result, inCurrency: currencies[0], outCurrency: currencies[1])
-        print(url)
+        
+        self.fetchDataFromApi(url: url){
+            result in
+            print(result)
+        }
+    }
+    func calculateCurrencies(base: Float, to: Float, ammount: Float) -> Float{
+        return ammount*(base/to)
     }
     func populateDropdowns(currencies : Array<String>){
         self.currencyInDropDown.optionArray = currencies
         self.currencyOutDropDown.optionArray = currencies
     }
+    @objc func onConvertClickHandler(sender: UITapGestureRecognizer){
+        convertCurrencies()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         self.fetchCurrenciesList()
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(self.onConvertClickHandler(sender:)))
+        self.convertButton.addGestureRecognizer(gesture)
         
       
     }
