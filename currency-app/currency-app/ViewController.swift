@@ -44,6 +44,8 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var currencyOutDropDown: DropDown!
     
+    @IBOutlet weak var convertButton : UIButton!
+    
     func getApiKey() -> String {
         var keys:NSDictionary?
         if let path =  Bundle.main.path(forResource: "keys", ofType: "plist"){
@@ -53,13 +55,13 @@ class ViewController: UIViewController {
 
         return arrayOfKeys[0]
     }
-    func prepareURLToFetch(param: String, apiKey: String, date: String="", inCurrenncy: String="", outCurrency: String="") -> String {
+    func prepareURLToFetch(param: String, apiKey: String, date: String="", inCurrency: String="", outCurrency: String="") -> String{
         let api = "http://www.apilayer.net/api/\(param)"
         let accessKey = "?access_key=\(apiKey)"
         if(param == "list"){
             return api + accessKey
         }
-        let endpoint = "&date=\(date)&currencies=\(inCurrenncy),\(outCurrency)&format=1"
+        let endpoint = "&date=\(date)&currencies=\(inCurrency),\(outCurrency)&format=1"
         return api + accessKey + endpoint
         
     }
@@ -106,6 +108,16 @@ class ViewController: UIViewController {
             self.populateDropdowns(currencies: newArray.map( { $0.shortName } ))
             
         }
+    }
+    func fetchToConvert(){
+        let key = self.getApiKey()
+        let currencies = ["PLN", "EUR"]
+        let date = Date()
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        let result = formatter.string(from: date)
+        let url = self.prepareURLToFetch(param: "historical", apiKey: key, date: result, inCurrency: currencies[0], outCurrency: currencies[1])
+        print(url)
     }
     func populateDropdowns(currencies : Array<String>){
         self.currencyInDropDown.optionArray = currencies
