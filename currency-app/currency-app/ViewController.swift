@@ -39,14 +39,19 @@ import SwiftyJSON
     }
 }
 class ViewController: UIViewController {
-
+    
+    @IBOutlet weak var valueTextField: UITextField!
+    
     @IBOutlet weak var currencyInDropDown: DropDown!
 
     @IBOutlet weak var currencyOutDropDown: DropDown!
     
     @IBOutlet weak var convertButton : UIButton!
     
-
+    @IBOutlet weak var convertedValueLabel: UILabel!
+    var currencyIn : String?
+    var currencyOut : String?
+    
     
     
     func getApiKey() -> String {
@@ -136,15 +141,9 @@ class ViewController: UIViewController {
         
     }
     @objc func onConvertClickHandler(sender: UITapGestureRecognizer){
-        if(currencyOutDropDown.isSelected && currencyInDropDown.isSelected)
-        {
-            let index = currencyOutDropDown.selectedIndex
-            print(currencyOutDropDown.optionArray[index!])
-        }else{
-            print("not selected currencies") // need validation
-        }
-        
-        //convertCurrencies()
+        if let valueToConvert = valueTextField.text,
+            let inCur = currencyIn, let outCur = currencyOut{
+        print("in: \(inCur), out: \(outCur) value:\(valueToConvert)")}
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -155,13 +154,18 @@ class ViewController: UIViewController {
     }
     
     func initDropDownSelectionListeners(){
+       
         currencyOutDropDown.didSelect{(currencyOut, index, id) in
-            print("Selected out currecy: \(currencyOut)")}
+        self.currencyOut = currencyOut
+        }
         currencyInDropDown.didSelect{(currencyIn, index, id) in
-            print("Selected in currecy: \(currencyIn)")}
+            self.currencyIn = currencyIn}
 
     }
     
+    @IBAction func currencyInEditingEnd(_ sender: Any) {
+        print("ended")
+    }
 }
     
     
