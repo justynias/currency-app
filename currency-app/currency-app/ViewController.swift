@@ -46,6 +46,8 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var convertButton : UIButton!
     
+
+    
     
     func getApiKey() -> String {
         var keys:NSDictionary?
@@ -107,7 +109,6 @@ class ViewController: UIViewController {
             }
             // Populate dropdowns after data has been fetched with Array mapped only to its shortName
             self.populateDropdowns(currencies: newArray.map( { $0.shortName } ))
-            
         }
     }
     func convertCurrencies(){
@@ -132,18 +133,35 @@ class ViewController: UIViewController {
     func populateDropdowns(currencies : Array<String>){
         self.currencyInDropDown.optionArray = currencies
         self.currencyOutDropDown.optionArray = currencies
+        
     }
     @objc func onConvertClickHandler(sender: UITapGestureRecognizer){
-        convertCurrencies()
+        if(currencyOutDropDown.isSelected && currencyInDropDown.isSelected)
+        {
+            let index = currencyOutDropDown.selectedIndex
+            print(currencyOutDropDown.optionArray[index!])
+        }else{
+            print("not selected currencies") // need validation
+        }
+        
+        //convertCurrencies()
     }
     override func viewDidLoad() {
         super.viewDidLoad()
         self.fetchCurrenciesList()
         let gesture = UITapGestureRecognizer(target: self, action: #selector(self.onConvertClickHandler(sender:)))
         self.convertButton.addGestureRecognizer(gesture)
-        
-      
+        initDropDownSelectionListeners()
     }
+    
+    func initDropDownSelectionListeners(){
+        currencyOutDropDown.didSelect{(currencyOut, index, id) in
+            print("Selected out currecy: \(currencyOut)")}
+        currencyInDropDown.didSelect{(currencyIn, index, id) in
+            print("Selected in currecy: \(currencyIn)")}
+
+    }
+    
 }
     
     
