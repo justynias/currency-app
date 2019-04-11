@@ -41,13 +41,10 @@ import SwiftyJSON
 class ViewController: UIViewController {
     
     @IBOutlet weak var valueTextField: UITextField!
-    
-    @IBOutlet weak var currencyInDropDown: DropDown!
-
+    /* DropDowns have reverse order -> addSubview() !! */
     @IBOutlet weak var currencyOutDropDown: DropDown!
-    
+    @IBOutlet weak var currencyInDropDown: DropDown!
     @IBOutlet weak var convertButton : UIButton!
-    
     @IBOutlet weak var convertedValueLabel: UILabel!
     var currencyIn : String?
     var currencyOut : String?
@@ -116,16 +113,9 @@ class ViewController: UIViewController {
             self.populateDropdowns(currencies: newArray.map( { $0.shortName } ))
         }
     }
-    func convertCurrencies(){
-        
-        let key = self.getApiKey()
-        let currencies = ["PLN", "EUR"]
-        let date = Date()
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd"
-        let result = formatter.string(from: date)
-        
-        let url = self.prepareURLToFetch(param: "historical", apiKey: key, date: result, inCurrency: currencies[0], outCurrency: currencies[1])
+    func convertCurrencies(curIn: String, curOut:String, date: String, value: Double){
+        let key = getApiKey()
+        let url = self.prepareURLToFetch(param: "historical", apiKey: key, date: date, inCurrency: curIn, outCurrency: curOut)
         
         self.fetchDataFromApi(url: url){
             result in
@@ -141,16 +131,28 @@ class ViewController: UIViewController {
         
     }
     @objc func onConvertClickHandler(sender: UITapGestureRecognizer){
-        if let valueToConvert = valueTextField.text,
-            let inCur = currencyIn, let outCur = currencyOut{
-        print("in: \(inCur), out: \(outCur) value:\(valueToConvert)")}
+        
+        //need a validation!!
+     
+       // txtDatePicker.text = convertDate(datePicker.date)
+        
+        if let valueToConvert = Double(valueTextField.text!),
+            let inCur = currencyIn, let outCur = currencyOut,
+            let date = txtDatePicker.text{
+            print("in: \(inCur), out: \(outCur), value:\(valueToConvert), date: \(date)")
+            convertCurrencies(curIn: inCur, curOut: outCur, date: date, value: valueToConvert)
+        }
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+
         self.fetchCurrenciesList()
         let gesture = UITapGestureRecognizer(target: self, action: #selector(self.onConvertClickHandler(sender:)))
         self.convertButton.addGestureRecognizer(gesture)
+        
         initDropDownSelectionListeners()
+        //init date picker
+        showDatePicker()
     }
     
     func initDropDownSelectionListeners(){
@@ -163,9 +165,42 @@ class ViewController: UIViewController {
 
     }
     
-    @IBAction func currencyInEditingEnd(_ sender: Any) {
-        print("ended")
+    /* Date Picker */
+    
+    @IBOutlet weak var txtDatePicker: UITextField!
+    let datePicker = UIDatePicker()
+    
+    func  showDatePicker(){
+        //foramt date
+        datePicker.datePickerMode = .date
+        
+        //ToolBar
+        let toolbar = UIToolbar();
+        toolbar.sizeToFit()
+        let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(donedatePicker));
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
+        let cancelButton = UIBarButtonItem(title: "cancel", style: .plain, target: self, action: #selector(cancelDatePicker));
+        
+        toolbar.setItems([doneButton, spaceButton, cancelButton], animated: false)
+        txtDatePicker.inputAccessoryView = toolbar
+        txtDatePicker.inputView = datePicker
+        txtDatePicker.text = convertDate(date: Date())
     }
+    
+    func convertDate(date: Date) -> String{
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        return formatter.string(from: date)
+    }
+    
+    @objc func donedatePicker(){
+        txtDatePicker.text = convertDate(date: datePicker.date)
+        self.view.endEditing(true)
+    }
+    @objc func cancelDatePicker(){
+        self.view.endEditing(true)
+    }
+ 
 }
     
     
