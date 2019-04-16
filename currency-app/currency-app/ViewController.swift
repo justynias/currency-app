@@ -104,8 +104,8 @@ class ViewController: UIViewController {
         let url = self.prepareURLToFetch(param: "list", apiKey: key)
         self.fetchDataFromApi(url: url) {
             // Callback for data fetched
-            result in
-            let currencies = result["currencies"]
+            response in
+            let currencies = response["currencies"]
             for(key, value) in currencies {
                 newArray.append(Currency(shortName: key, fullName: value.stringValue))
             }
@@ -116,13 +116,23 @@ class ViewController: UIViewController {
     func convertCurrencies(curIn: String, curOut:String, date: String, value: Double){
         let key = getApiKey()
         let url = self.prepareURLToFetch(param: "historical", apiKey: key, date: date, inCurrency: curIn, outCurrency: curOut)
-        
         self.fetchDataFromApi(url: url){
-            result in
-            print(result)
+            response in
+            // Get JSON of in and out values
+            let currencies = response["quotes"]
+            // Create Keys in format "USD\(value)", Api returns keys in this way
+            let inKey = "\(response["source"].stringValue)\(curIn)"
+            let outKey = "\(response["source"].stringValue)\(curOut)"
+            let result = self.calculateCurrencies(base: currencies[inKey].doubleValue, to: currencies[outKey].doubleValue, ammount: value)
+            // Invoke text change on main thread
+            DispatchQueue.main.async {
+                self.convertedValueLabel.text = "\(round(result * 100) / 100)"
+            }
         }
+
+
     }
-    func calculateCurrencies(base: Float, to: Float, ammount: Float) -> Float{
+    func calculateCurrencies(base: Double, to: Double, ammount: Double) -> Double{
         return ammount*(base/to)
     }
     func populateDropdowns(currencies : Array<String>){
@@ -132,14 +142,12 @@ class ViewController: UIViewController {
     }
     @objc func onConvertClickHandler(sender: UITapGestureRecognizer){
         
-        //need a validation!!
-     
-       // txtDatePicker.text = convertDate(datePicker.date)
+        // @TODO validation if textbox contains proper format (Number)
+        // && if it is not empty
         
         if let valueToConvert = Double(valueTextField.text!),
             let inCur = currencyIn, let outCur = currencyOut,
-            let date = txtDatePicker.text{
-            print("in: \(inCur), out: \(outCur), value:\(valueToConvert), date: \(date)")
+            let date = txtDatePicker.text {
             convertCurrencies(curIn: inCur, curOut: outCur, date: date, value: valueToConvert)
         }
     }
@@ -147,22 +155,20 @@ class ViewController: UIViewController {
         super.viewDidLoad()
 
         self.fetchCurrenciesList()
+        // Add listener for convert button click
         let gesture = UITapGestureRecognizer(target: self, action: #selector(self.onConvertClickHandler(sender:)))
         self.convertButton.addGestureRecognizer(gesture)
-        
+        // Init listener for dropdown ite selection
         initDropDownSelectionListeners()
-        //init date picker
+        // Init date picker
         showDatePicker()
     }
     
     func initDropDownSelectionListeners(){
-       
         currencyOutDropDown.didSelect{(currencyOut, index, id) in
-        self.currencyOut = currencyOut
-        }
+            self.currencyOut = currencyOut}
         currencyInDropDown.didSelect{(currencyIn, index, id) in
             self.currencyIn = currencyIn}
-
     }
     
     /* Date Picker */
@@ -171,7 +177,7 @@ class ViewController: UIViewController {
     let datePicker = UIDatePicker()
     
     func  showDatePicker(){
-        //foramt date
+        // Format date
         datePicker.datePickerMode = .date
         
         //ToolBar
