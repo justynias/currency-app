@@ -105,6 +105,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="changeButton" destination="j1E-7u-a0W" id="OAK-Hf-jHL"/>
                         <outlet property="convertButton" destination="Blo-oM-I4D" id="qEO-vz-n68"/>
                         <outlet property="convertedValueLabel" destination="0Qo-91-l5i" id="iPl-B3-hxc"/>
                         <outlet property="currencyInDropDown" destination="Rjq-M3-rA0" id="vJn-He-Hsl"/>

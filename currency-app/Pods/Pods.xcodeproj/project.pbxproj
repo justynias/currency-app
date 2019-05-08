@@ -62,9 +62,9 @@
 		0019A3F81E726A9F6B28A1D8158D4964 /* SwiftyJSON.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftyJSON.xcconfig; sourceTree = "<group>"; };
 		06D5DEDA338F046246F0FAEA9CB2BB05 /* Pods-currency-app-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-currency-app-umbrella.h"; sourceTree = "<group>"; };
 		0711BEF4FE7B50A6B8454ED2795EB21A /* SwiftyJSON.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftyJSON.swift; path = Source/SwiftyJSON.swift; sourceTree = "<group>"; };
-		080FAEDC726874549E10F8CF72D7F228 /* iOSDropDown.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = iOSDropDown.framework; path = iOSDropDown.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		080FAEDC726874549E10F8CF72D7F228 /* iOSDropDown.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = iOSDropDown.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B959EE041B5117FE795DE28A0682191 /* SwiftyJSON-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftyJSON-dummy.m"; sourceTree = "<group>"; };
-		1079C3AB5296CD054616BB438349A496 /* SwiftyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftyJSON.framework; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1079C3AB5296CD054616BB438349A496 /* SwiftyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A77ED97DDE423EEFEFCAD5940BBE44B /* iOSDropDown-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "iOSDropDown-prefix.pch"; sourceTree = "<group>"; };
 		1AF47A3DFD06B893B354CC38AED39410 /* Pods-currency-appTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-currency-appTests.modulemap"; sourceTree = "<group>"; };
 		1E519A84123AA1DC1749F8164A102D47 /* Pods-currency-appTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-currency-appTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -78,20 +78,20 @@
 		5973A5B6F160941108A1FF8893995483 /* Pods-currency-appUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-currency-appUITests-umbrella.h"; sourceTree = "<group>"; };
 		5DF998CD0A66F54754781095540C592F /* iOSDropDown.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = iOSDropDown.modulemap; sourceTree = "<group>"; };
 		63DA1D609B715F81F37CD0D8984D6A7F /* Pods-currency-appUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-currency-appUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		66A1A3ACB8148D11E2CD1793BEB2788A /* Pods_currency_app.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_currency_app.framework; path = "Pods-currency-app.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		66A1A3ACB8148D11E2CD1793BEB2788A /* Pods_currency_app.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_currency_app.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		67CDDF53098E527E61122C5C61B7E8EB /* Pods-currency-app-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-currency-app-acknowledgements.markdown"; sourceTree = "<group>"; };
 		691E488230485C36E682563B169E7249 /* SwiftyJSON-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SwiftyJSON-Info.plist"; sourceTree = "<group>"; };
 		6D20AA0EF3A69FF9C901D2167309E6C0 /* Pods-currency-appUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-currency-appUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		6EB687B2BDB3D753979FEA06BA1B849A /* Pods-currency-appTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-currency-appTests-umbrella.h"; sourceTree = "<group>"; };
 		70985189670D50303B32ABA05BD7A0DD /* Pods-currency-appTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-currency-appTests.release.xcconfig"; sourceTree = "<group>"; };
-		74C14814DF9642740204AB5106820C6C /* Pods_currency_appTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_currency_appTests.framework; path = "Pods-currency-appTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		74C14814DF9642740204AB5106820C6C /* Pods_currency_appTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_currency_appTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7819EA6758C47FCC4C4370B71A50C442 /* Pods-currency-appTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-currency-appTests-dummy.m"; sourceTree = "<group>"; };
-		7C11F4F9AD01CDEEC43245A9BBB2293A /* Pods_currency_appUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_currency_appUITests.framework; path = "Pods-currency-appUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7C11F4F9AD01CDEEC43245A9BBB2293A /* Pods_currency_appUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_currency_appUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		919754856EC1DAF8DAFF538B1496D10F /* Pods-currency-app-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-currency-app-frameworks.sh"; sourceTree = "<group>"; };
 		944C770F39585E563C01BB38B60DDE68 /* Pods-currency-appUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-currency-appUITests.modulemap"; sourceTree = "<group>"; };
 		94A213444F3F3D2ED16D67B2CE870F58 /* iOSDropDown-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "iOSDropDown-Info.plist"; sourceTree = "<group>"; };
 		96E097D5DDB8EED0885A774C1B245698 /* Pods-currency-appUITests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-currency-appUITests-Info.plist"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A602A1149E548734E2640FBF8D1BEF4D /* iOSDropDown-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "iOSDropDown-umbrella.h"; sourceTree = "<group>"; };
 		B89C1CA4FAFE55E55CE1F3E5D05A3A09 /* Pods-currency-appTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-currency-appTests-acknowledgements.plist"; sourceTree = "<group>"; };
 		C267D584309AEF8DA0AFB12223905470 /* iOSDropDown.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = iOSDropDown.xcconfig; sourceTree = "<group>"; };
@@ -239,7 +239,6 @@
 				0711BEF4FE7B50A6B8454ED2795EB21A /* SwiftyJSON.swift */,
 				541C7990F9B46B61C6BB3B01E454D379 /* Support Files */,
 			);
-			name = SwiftyJSON;
 			path = SwiftyJSON;
 			sourceTree = "<group>";
 		};
@@ -266,7 +265,6 @@
 				28CE3A6FF77C64D0B6BE2A14BDDCDAEF /* iOSDropDown.swift */,
 				EF704D5DD45F4B9E5E08A11BD36D036B /* Support Files */,
 			);
-			name = iOSDropDown;
 			path = iOSDropDown;
 			sourceTree = "<group>";
 		};

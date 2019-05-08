@@ -46,9 +46,11 @@ class ViewController: UIViewController {
     @IBOutlet weak var currencyInDropDown: DropDown!
     @IBOutlet weak var convertButton : UIButton!
     @IBOutlet weak var convertedValueLabel: UILabel!
+    @IBOutlet weak var changeButton: UIButton!
     var currencyIn : String?
     var currencyOut : String?
-    
+    var valueToConvert: String?
+    var date: String?
     
     
     func getApiKey() -> String {
@@ -142,14 +144,19 @@ class ViewController: UIViewController {
     }
     @objc func onConvertClickHandler(sender: UITapGestureRecognizer){
         
-        // @TODO validation if textbox contains proper format (Number)
-        // && if it is not empty
-        
-        if let valueToConvert = Double(valueTextField.text!),
-            let inCur = currencyIn, let outCur = currencyOut,
-            let date = txtDatePicker.text {
-            convertCurrencies(curIn: inCur, curOut: outCur, date: date, value: valueToConvert)
+        if(isValidate()){
+                convertCurrencies(curIn: currencyIn!, curOut: currencyOut!, date: date!, value: Double(valueToConvert!)!)
         }
+    }
+    @objc func onChangeClickHandler(sender: UITapGestureRecognizer){
+        //remeber that they are reverted! in is out
+        
+        //can not use textfield at the same time as dropdown
+        //eventually get index in listener when the value is changed
+        //or use some closures as listDidDisappear()
+        //github.com//jriosdev/iOSDropDown -> documentation
+        print("clicked")
+       currencyInDropDown.selectedIndex = 4 // selection working but is not displayed on textfield
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -158,6 +165,9 @@ class ViewController: UIViewController {
         // Add listener for convert button click
         let gesture = UITapGestureRecognizer(target: self, action: #selector(self.onConvertClickHandler(sender:)))
         self.convertButton.addGestureRecognizer(gesture)
+        let gesture2 = UITapGestureRecognizer(target: self, action: #selector(self.onChangeClickHandler(sender:)))
+        self.convertButton.addGestureRecognizer(gesture)
+        self.changeButton.addGestureRecognizer(gesture2)
         // Init listener for dropdown ite selection
         initDropDownSelectionListeners()
         // Init date picker
@@ -179,6 +189,7 @@ class ViewController: UIViewController {
     func  showDatePicker(){
         // Format date
         datePicker.datePickerMode = .date
+        datePicker.maximumDate = Date()
         
         //ToolBar
         let toolbar = UIToolbar();
@@ -206,8 +217,38 @@ class ViewController: UIViewController {
     @objc func cancelDatePicker(){
         self.view.endEditing(true)
     }
+    
+    func isValidate() -> Bool{
+        do{
+             try valueToConvert = Validator().isValueValid(value: valueTextField.text!)
+             try currencyOut = Validator().isCurrencyValid(currency: currencyOut)
+             try currencyIn = Validator().isCurrencyValid(currency: currencyIn)
+             try date = Validator().isDateValid(date: txtDatePicker.text)
+        }catch(let error){
+            showAlert(error: (error as! ValidationError).message)
+            return false
+        }
+        return true
+      
+    }
+    //resolve problem with a currency which does not exist but is desplayed on the screen (entered by keyboard)
+    //by default previous currency is converted but it is not user firendly
+    func showAlert(error: String){
+        
+        let alertController = UIAlertController(title: "", message: error, preferredStyle: .alert)
+        let OKAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alertController.addAction(OKAction)
+        self.present(alertController, animated: true, completion: nil)
+        print(error)
+    }
+    
+   
+    
  
 }
+
+
+
     
     
 
