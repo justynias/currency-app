@@ -155,8 +155,15 @@ class ViewController: UIViewController {
         //eventually get index in listener when the value is changed
         //or use some closures as listDidDisappear()
         //github.com//jriosdev/iOSDropDown -> documentation
-        print("clicked")
-       currencyInDropDown.selectedIndex = 4 // selection working but is not displayed on textfield
+        let tempDDValue = currencyInDropDown.text
+        let tempCurrencyValue = currencyIn
+        currencyInDropDown.text = currencyOutDropDown.text
+        currencyIn = currencyOut
+        currencyOutDropDown.text = tempDDValue
+        currencyOut = tempCurrencyValue
+        
+        
+        
     }
     override func viewDidLoad() {
         super.viewDidLoad()
