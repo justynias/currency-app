@@ -41,7 +41,6 @@ import SwiftyJSON
 class ViewController: UIViewController {
     
     @IBOutlet weak var valueTextField: UITextField!
-    /* DropDowns have reverse order -> addSubview() !! */
     @IBOutlet weak var currencyOutDropDown: DropDown!
     @IBOutlet weak var currencyInDropDown: DropDown!
     @IBOutlet weak var convertButton : UIButton!
@@ -73,6 +72,8 @@ class ViewController: UIViewController {
         
     }
     func fetchDataFromApi(url: String, completionHandler:@escaping (_ result: JSON) -> Void){
+       if Reachibility.isConnectedToNetwork() {
+        //check internet connection!
         let config = URLSessionConfiguration.default
         let session = URLSession(configuration: config)
         let mainURL = URL(string: url)
@@ -81,13 +82,13 @@ class ViewController: UIViewController {
             
             // ensure there is no error for this HTTP response
             guard error == nil else {
-                print ("error: \(error!)")
+                self.showAlert(error: (error as! ValidationError).message)
                 return
             }
             
             // ensure there is data returned from this HTTP response
             guard let content = data else {
-                print("No data")
+                self.showAlert(error: "No data")
                 return
             }
             
@@ -98,6 +99,11 @@ class ViewController: UIViewController {
         }
         // execute the HTTP request
         task.resume()
+        }
+        else{
+            showAlert(error: "Check your internet connection")
+        }
+        
         
     }
     func fetchCurrenciesList(){
@@ -128,7 +134,8 @@ class ViewController: UIViewController {
             let result = self.calculateCurrencies(base: currencies[inKey].doubleValue, to: currencies[outKey].doubleValue, ammount: value)
             // Invoke text change on main thread
             DispatchQueue.main.async {
-                self.convertedValueLabel.text = "\(round(result * 100) / 100)"
+                self.convertedValueLabel.text = "\(round(result * 100) / 100) \(curIn)"
+                //again they are reverted?
             }
         }
 
@@ -142,6 +149,7 @@ class ViewController: UIViewController {
         self.currencyOutDropDown.optionArray = currencies
         
     }
+  
     @objc func onConvertClickHandler(sender: UITapGestureRecognizer){
         
         if(isValidate()){
@@ -150,19 +158,13 @@ class ViewController: UIViewController {
     }
     @objc func onChangeClickHandler(sender: UITapGestureRecognizer){
         //remeber that they are reverted! in is out
-        
-        //can not use textfield at the same time as dropdown
-        //eventually get index in listener when the value is changed
-        //or use some closures as listDidDisappear()
-        //github.com//jriosdev/iOSDropDown -> documentation
+
         let tempDDValue = currencyInDropDown.text
         let tempCurrencyValue = currencyIn
         currencyInDropDown.text = currencyOutDropDown.text
         currencyIn = currencyOut
         currencyOutDropDown.text = tempDDValue
         currencyOut = tempCurrencyValue
-        
-        
         
     }
     override func viewDidLoad() {
@@ -246,7 +248,6 @@ class ViewController: UIViewController {
         let OKAction = UIAlertAction(title: "OK", style: .default, handler: nil)
         alertController.addAction(OKAction)
         self.present(alertController, animated: true, completion: nil)
-        print(error)
     }
     
    
