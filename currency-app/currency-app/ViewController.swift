@@ -72,7 +72,6 @@ class ViewController: UIViewController {
         
     }
     func fetchDataFromApi(url: String, completionHandler:@escaping (_ result: JSON) -> Void){
-       if Reachibility.isConnectedToNetwork() {
         //check internet connection!
         let config = URLSessionConfiguration.default
         let session = URLSession(configuration: config)
@@ -82,7 +81,7 @@ class ViewController: UIViewController {
             
             // ensure there is no error for this HTTP response
             guard error == nil else {
-                self.showAlert(error: (error as! ValidationError).message)
+                self.showAlert(error: "Check your internet connection")
                 return
             }
             
@@ -99,10 +98,7 @@ class ViewController: UIViewController {
         }
         // execute the HTTP request
         task.resume()
-        }
-        else{
-            showAlert(error: "Check your internet connection")
-        }
+
         
         
     }
