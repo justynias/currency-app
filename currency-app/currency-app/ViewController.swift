@@ -165,6 +165,8 @@ class ViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.valueTextField.delegate = self
 
         self.fetchCurrenciesList()
         // Add listener for convert button click
@@ -245,10 +247,13 @@ class ViewController: UIViewController {
         alertController.addAction(OKAction)
         self.present(alertController, animated: true, completion: nil)
     }
-    
-   
-    
- 
+
+}
+extension ViewController : UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
 }
 
 
