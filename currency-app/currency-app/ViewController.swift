@@ -147,7 +147,7 @@ class ViewController: UIViewController {
     }
   
     @objc func onConvertClickHandler(sender: UITapGestureRecognizer){
-        
+        self.convertedValueLabel.text = ""
         if(isValidate()){
                 convertCurrencies(curIn: currencyIn!, curOut: currencyOut!, date: date!, value: Double(valueToConvert!)!)
         }
@@ -161,6 +161,7 @@ class ViewController: UIViewController {
         currencyIn = currencyOut
         currencyOutDropDown.text = tempDDValue
         currencyOut = tempCurrencyValue
+        self.convertedValueLabel.text = ""
         
     }
     override func viewDidLoad() {
@@ -175,6 +176,8 @@ class ViewController: UIViewController {
         let gesture2 = UITapGestureRecognizer(target: self, action: #selector(self.onChangeClickHandler(sender:)))
         self.convertButton.addGestureRecognizer(gesture)
         self.changeButton.addGestureRecognizer(gesture2)
+       // self.valueTextField.addTarget(self, action: #selector(textFieldDidBeginEditing(_:)), for: )
+      
         // Init listener for dropdown ite selection
         initDropDownSelectionListeners()
         // Init date picker
@@ -183,9 +186,13 @@ class ViewController: UIViewController {
     
     func initDropDownSelectionListeners(){
         currencyOutDropDown.didSelect{(currencyOut, index, id) in
-            self.currencyOut = currencyOut}
+            self.currencyOut = currencyOut
+             self.convertedValueLabel.text = ""
+        }
         currencyInDropDown.didSelect{(currencyIn, index, id) in
-            self.currencyIn = currencyIn}
+            self.currencyIn = currencyIn
+             self.convertedValueLabel.text = ""
+        }
     }
     
     /* Date Picker */
@@ -209,6 +216,8 @@ class ViewController: UIViewController {
         txtDatePicker.inputAccessoryView = toolbar
         txtDatePicker.inputView = datePicker
         txtDatePicker.text = convertDate(date: Date())
+        
+         self.convertedValueLabel.text = ""
     }
     
     func convertDate(date: Date) -> String{
@@ -223,6 +232,9 @@ class ViewController: UIViewController {
     }
     @objc func cancelDatePicker(){
         self.view.endEditing(true)
+    }
+    @objc func textFieldDidBeginEditing(_ textField: UITextField) {
+        self.convertedValueLabel.text = ""
     }
     
     func isValidate() -> Bool{
