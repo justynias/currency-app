@@ -176,12 +176,15 @@ class ViewController: UIViewController {
         let gesture2 = UITapGestureRecognizer(target: self, action: #selector(self.onChangeClickHandler(sender:)))
         self.convertButton.addGestureRecognizer(gesture)
         self.changeButton.addGestureRecognizer(gesture2)
-       // self.valueTextField.addTarget(self, action: #selector(textFieldDidBeginEditing(_:)), for: )
-      
+        valueTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+        txtDatePicker.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+        
         // Init listener for dropdown ite selection
         initDropDownSelectionListeners()
         // Init date picker
         showDatePicker()
+        
+        
     }
     
     func initDropDownSelectionListeners(){
@@ -204,7 +207,7 @@ class ViewController: UIViewController {
         // Format date
         datePicker.datePickerMode = .date
         datePicker.maximumDate = Date()
-        
+        datePicker.addTarget(self, action: #selector(datePickerChanged(picker:)), for: .valueChanged)
         //ToolBar
         let toolbar = UIToolbar();
         toolbar.sizeToFit()
@@ -217,7 +220,7 @@ class ViewController: UIViewController {
         txtDatePicker.inputView = datePicker
         txtDatePicker.text = convertDate(date: Date())
         
-         self.convertedValueLabel.text = ""
+        
     }
     
     func convertDate(date: Date) -> String{
@@ -227,6 +230,7 @@ class ViewController: UIViewController {
     }
     
     @objc func donedatePicker(){
+        
         txtDatePicker.text = convertDate(date: datePicker.date)
         self.view.endEditing(true)
     }
@@ -234,6 +238,9 @@ class ViewController: UIViewController {
         self.view.endEditing(true)
     }
     @objc func textFieldDidBeginEditing(_ textField: UITextField) {
+        self.convertedValueLabel.text = ""
+    }
+    @objc func datePickerChanged(picker: UIDatePicker){
         self.convertedValueLabel.text = ""
     }
     
@@ -250,6 +257,13 @@ class ViewController: UIViewController {
         return true
       
     }
+    @objc func textFieldDidChange(_ textField: UITextField) {
+        self.convertedValueLabel.text = ""
+    }
+    @objc func datePickerDitChange(_ datePicker: UIDatePicker){
+        self.convertedValueLabel.text = ""
+    }
+    
     //resolve problem with a currency which does not exist but is desplayed on the screen (entered by keyboard)
     //by default previous currency is converted but it is not user firendly
     func showAlert(error: String){
@@ -275,5 +289,6 @@ extension ViewController : UITextFieldDelegate {
 
     
    
+
 
 
